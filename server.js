@@ -68,7 +68,6 @@ app.post('/uploadmultiple', upload.array('myFiles', 12), (req, res, next) => {
     res.send(files)
 })
 
-
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/upload.html');
 });
