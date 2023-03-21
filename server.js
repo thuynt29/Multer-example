@@ -68,16 +68,6 @@ app.post('/uploadmultiple', upload.array('myFiles', 12), (req, res, next) => {
     res.send(files)
 })
 
-app.post("/upload/photo", upload.single('myImage'), (req, res, next) => {
-    const file = req.file;
-    if (!file) {
-      const err = new Error("Please choose files");
-      return next(err);
-    }else if (file.mimetype != "image.jpeg"){
-        res.send("File is not jpeg file")
-    }
-    res.send("Upload success!");
-})
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/upload.html');
